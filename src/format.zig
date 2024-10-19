@@ -539,6 +539,25 @@ pub const FORMAT_BOX_CHARS = blk: {
         .build();
 };
 
+/// With no line separator, but with title separator
+///
+/// # Example
+/// ```text
+/// | T1 | T2 |
+/// |----|----|
+/// | a  | b  |
+/// | c  | d  |
+/// ```
+pub const FORMAT_MARKDOWN_WITH_TITLE = blk: {
+    var builder = FormatBuilder.new();
+    break :blk builder
+        .withColumnSeparator("|")
+        .withBorders("|")
+        .withSeparator(LinePosition.title, LineSeparator.new("-", "|", "|", "|"))
+        .withPadding(1, 1)
+        .build();
+};
+
 test "test FORMAT_DEFAULT" {
     try testing.expect(FORMAT_DEFAULT.csep != null);
 }
@@ -577,4 +596,8 @@ test "test FORMAT_NO_BORDER_LINE_SEPARATOR" {
 
 test "test FORMAT_BOX_CHARS" {
     try testing.expect(FORMAT_BOX_CHARS.csep != null);
+}
+
+test "test FORMAT_MARKDOWN_WITH_TITLE" {
+    try testing.expect(FORMAT_MARKDOWN_WITH_TITLE.csep != null);
 }

@@ -16,6 +16,7 @@ pub const FORMAT_BORDERS_ONLY = @import("./format.zig").FORMAT_BORDERS_ONLY;
 pub const FORMAT_NO_BORDER = @import("./format.zig").FORMAT_NO_BORDER;
 pub const FORMAT_NO_BORDER_LINE_SEPARATOR = @import("./format.zig").FORMAT_NO_BORDER_LINE_SEPARATOR;
 pub const FORMAT_BOX_CHARS = @import("./format.zig").FORMAT_BOX_CHARS;
+pub const FORMAT_MARKDOWN_WITH_TITLE = @import("./format.zig").FORMAT_MARKDOWN_WITH_TITLE;
 
 // pub fn main() !void {
 //     const std = @import("std");

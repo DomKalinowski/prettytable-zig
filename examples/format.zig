@@ -52,6 +52,10 @@ pub fn main() !void {
     table.setFormat(pt.FORMAT_BOX_CHARS);
     try table.printstd();
 
+    std.debug.print("\n\n{s}\n", .{"FORMAT_MARKDOWN_WITH_TITLE"});
+    table.setFormat(pt.FORMAT_MARKDOWN_WITH_TITLE);
+    try table.printstd();
+
     // FORMAT_DEFAULT
     // +------+------+--------+
     // | col1 | col2 | col3   |
@@ -128,4 +132,10 @@ pub fn main() !void {
     // ├──────┼──────┼────────┤
     // │ foo  │ bar  │ foobar │
     // └──────┴──────┴────────┘
+
+    // FORMAT_MARKDOWN_WITH_TITLE
+    // | col1 | col2 | col3   |
+    // |------|------|--------|
+    // | ABCD | EFG  | HI     |
+    // | foo  | bar  | foobar |
 }
